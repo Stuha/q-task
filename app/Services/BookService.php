@@ -11,9 +11,6 @@ class BookService implements Interfaces\BookServiceInterface
     {
     }
 
-    /**
-     * @throws \Exception
-     */
     public function createBook(array $data): \stdClass|array
     {
         $createBookData = $this->formatBookData($data);
@@ -26,9 +23,6 @@ class BookService implements Interfaces\BookServiceInterface
        return $this->clientService->delete('https://symfony-skeleton.q-tests.com/api/v2/books/' . $id);
     }
 
-    /**
-     * @throws \Exception
-     */
     private function formatBookData(array $data): array
     {
         return [
