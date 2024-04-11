@@ -23,7 +23,7 @@ Route::controller(LoginController::class)->group(function () {
     Route::get('/', 'index')->name('home');
     Route::post('/login', 'login')->name('login');
     Route::get('/logout', 'logout')->name('logout');
-})->middleware('auth.session');
+});
 
 Route::controller( AuthorController::class)->group(function () {
     Route::get('/author', 'index')->name('authors.index');
