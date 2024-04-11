@@ -25,13 +25,13 @@ Route::controller(LoginController::class)->group(function () {
     Route::get('/logout', 'logout')->name('logout');
 });
 
-Route::controller( AuthorController::class)->group(function () {
+Route::controller(AuthorController::class)->group(function () {
     Route::get('/author', 'index')->name('authors.index');
     Route::get('/author/{id}', 'show')->name('author.show');
     Route::delete('/author/{id}', 'delete')->name('author.delete');
 });
 
-Route::controller( BookController::class)->group(function () {
+Route::controller(BookController::class)->group(function () {
     Route::get('/book', 'create')->name('book.create');
     Route::post('/book', 'store')->name('book.store');
     Route::delete('/book/{id}/{author_id}', 'delete')->name('book.delete');
