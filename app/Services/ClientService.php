@@ -12,7 +12,6 @@ class ClientService implements ClientServiceInterface
     public function __construct(private readonly Client $client)
     {}
 
-
     public function login(string $email, string $password): \stdClass|array
     {
         try {

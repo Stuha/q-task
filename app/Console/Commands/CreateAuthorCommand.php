@@ -28,9 +28,10 @@ class CreateAuthorCommand extends Command
     public function handle(ClientServiceInterface $clientService)
     {
         $path = base_path('.env');
-        $dotenv = Dotenv::createUnsafeImmutable(base_path());
+        $dotenv = Dotenv::createImmutable(base_path());
         $dotenv->load();
-        $token = getenv('VERIFICATION_TOKEN');
+        $token = env('VERIFICATION_TOKEN');
+
         $content = file_get_contents($path);
 
         if (!$token) {
